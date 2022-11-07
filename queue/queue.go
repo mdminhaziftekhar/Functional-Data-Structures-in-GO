@@ -31,7 +31,11 @@ func (q Queue) Dequeue() (Queue, []int) {
 	element := q.actualQueue[0]
 	fmt.Println("Dequeued:", element)
 	q.front--
-	return q, q.actualQueue[1:]
+	newQActual := q.actualQueue[1:]
+	newQ := Queue{front: -1}
+	newQ.actualQueue = newQActual
+	newQ.front = q.front
+	return newQ, newQ.actualQueue
 }
 
 func (q Queue) Front() int {
@@ -44,10 +48,10 @@ func (q Queue) Front() int {
 
 func main() {
 	q := Queue{front: -1}
-	newQueue, actualQueue := q.enqueue(8, 10)
+	newQueue, actualQueue := q.enqueue(8, 10, 20, 30)
 	fmt.Println(actualQueue)
 
-	newQueue2, actualQueue2 := newQueue.enqueue(90)
+	newQueue2, actualQueue2 := newQueue.enqueue(90, 100)
 	fmt.Println(newQueue2, actualQueue2)
 
 	fmt.Println("After dequeue 8: ", newQueue2.actualQueue)
