@@ -40,7 +40,7 @@ func (q Queue) Dequeue() (Queue, []int) {
 
 func (q Queue) Front() int {
 	if !q.IsEmpty() {
-		val := q.actualQueue[q.front]
+		val := q.actualQueue[0]
 		return val
 	}
 	return 0

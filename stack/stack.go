@@ -58,7 +58,7 @@ func main() {
 	//x := 9
 	stkNewPush, actualStkAfterPush := stk.Push(100, 200)
 	fmt.Println("New stack object after push: ", stkNewPush)
-	fmt.Println("Stack after pushing 9: ", actualStkAfterPush)
+	fmt.Println("Stack after pushing : ", actualStkAfterPush)
 
 	stkAfterPop, actualStkAfterPop := stkNewPush.Pop()
 	fmt.Println("Stack after Pop:", stkAfterPop)
