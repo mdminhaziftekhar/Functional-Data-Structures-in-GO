@@ -14,11 +14,6 @@ func (List *List) SetData(data interface{}) {
 	List.Data = data
 }
 
-func cons(list *List, toAdd int) []int {
-	var data []int = list.GetData().([]int)
-	list2 := append(data, toAdd)
-	return list2
-}
 
 func car(list []int) int {
 	head := list[0]
@@ -29,6 +24,13 @@ func cdr(list []int) []int {
 	tail := list[1:]
 	return tail
 }
+
+func cons(list *List, toAdd int) []int {
+	var data []int = list.GetData().([]int)
+	list2 := append(data, toAdd)
+	return list2
+}
+
 
 func main() {
 	list := &List{}
